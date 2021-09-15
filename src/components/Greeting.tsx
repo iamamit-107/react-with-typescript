@@ -1,10 +1,16 @@
 type GreetingProps = {
   name: string;
-  place: string;
+  place?: string;
 };
 
+// by using ? mark we make this props optional
 const Greeting = (props: GreetingProps) => {
-  return <div>Hello {props.name}, Welcome to {props.place} world!</div>;
+  const { place = "Optional Typescript" } = props;
+  return (
+    <div>
+      Hello {props.name}, Welcome to {place} world!
+    </div>
+  );
 };
 
 export default Greeting;

@@ -1,33 +1,22 @@
 import "./App.css";
 import Greeting from "./components/Greeting";
-import { Person } from "./components/Person";
-import { PersonLists } from "./components/PersonLists";
+import Header from "./components/Header";
+import NestComponent from "./components/NestComponent";
 
 function App() {
-  const person = {
-    first: "ahmed",
-    last: "faisal",
-  };
-
-  const personLists = [
-    {
-      first: "ahmed1",
-      last: "faisal1",
-    },
-    {
-      first: "ahmed2",
-      last: "faisal2",
-    },
-    {
-      first: "ahmed3",
-      last: "faisal3",
-    },
-  ];
   return (
     <div className="App">
-      <Greeting name="Amit" place="React-Typescript" />
-      <Person name={person} />
-      <PersonLists name={personLists} />
+      <Header>This is header</Header>
+
+      {/* Pass a component to a component */}
+      <NestComponent>
+        <Header>
+          This is a nesting component passed using typescript types
+        </Header>
+      </NestComponent>
+
+      {/* Passing only required props and avoid optional props */}
+      <Greeting name="Amit" />
     </div>
   );
 }
