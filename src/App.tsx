@@ -1,4 +1,5 @@
 import "./App.css";
+import AddStyle from "./components/AddStyle";
 import Button from "./components/Button";
 import Greeting from "./components/Greeting";
 import Header from "./components/Header";
@@ -26,6 +27,9 @@ function App() {
       />
 
       <Input value="" onChange={(e) => console.log(e)} />
+
+      {/* Passing styles throug props */}
+      <AddStyle styles={{ color: "red", fontWeight: "bold" }} />
     </div>
   );
 }
