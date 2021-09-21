@@ -6,7 +6,7 @@ type AuthUser = {
 };
 
 export default function LoggedIn() {
-  const [loggedin, setLoggedin] = useState<null | AuthUser>(null);
+  const [loggedin, setLoggedin] = useState({} as AuthUser);
 
   const handleLogin = () => {
     setLoggedin({
@@ -14,16 +14,13 @@ export default function LoggedIn() {
       email: "amit@amit.com",
     });
   };
-  const handleLogout = () => {
-    setLoggedin(null);
-  };
+
   return (
     <div>
       <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
 
-      <h3>Name is {loggedin?.name}</h3>
-      <h3>Email is {loggedin?.email}</h3>
+      <h3>Name is {loggedin.name}</h3>
+      <h3>Email is {loggedin.email}</h3>
     </div>
   );
 }
